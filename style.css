@@ -126,3 +126,23 @@ footer {
     text-align: center;
     padding: 15px 0;
 }
+
+/* Logo container */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Logo image */
+.logo img {
+    height: 50px;
+}
+
+/* Logo text */
+.logo-text {
+    font-size: 24px;      /* bigger text */
+    font-weight: bold;
+    color: #ffffff;      /* white text */
+    letter-spacing: 1px;
+}
