@@ -1,0 +1,128 @@
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+header {
+    background: #0b3c5d;
+    padding: 15px 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(11,60,93,.8), rgba(11,60,93,.8)),
+        url("https://images.unsplash.com/photo-1554224155-8d04cb21cd6c") center/cover;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #f4b41a;
+    color: #000;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* SERVICES */
+.services {
+    background: #fff;
+    padding: 60px 0;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-box {
+    background: #f5f7fa;
+    padding: 30px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* ABOUT & CONTACT */
+.about, .contact {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 500px;
+    margin: auto;
+    display: grid;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+.contact button {
+    background: #0b3c5d;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    background: #0b3c5d;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
