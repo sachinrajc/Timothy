@@ -127,16 +127,26 @@ footer {
     padding: 15px 0;
 }
 /* Logo + company name wrapper */
-.logo-area {
+/* Logo + company name wrapper */
+.logo {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
 /* Logo image */
-.logo-area img {
+.logo img {
     height: 50px;
 }
+
+/* Company name next to logo */
+.logo .company-name {
+    color: #ffffff;   /* FORCE white */
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
 
 /* Company name next to logo */
 .company-name {
