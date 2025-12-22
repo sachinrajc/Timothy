@@ -141,7 +141,7 @@ footer {
 .logo img {
     height: 48px;
     width: 48px;
-    border-radius: 50%;
+    border-radius: 20%;
     object-fit: cover;
 }
 
