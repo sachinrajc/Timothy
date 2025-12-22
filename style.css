@@ -52,7 +52,7 @@ header {
 /* HERO */
 .hero {
     background: linear-gradient(rgba(11,60,93,.8), rgba(11,60,93,.8)),
-        url("https://images.unsplash.com/photo-1554224155-8d04cb21cd6c") center/cover;
+        url("https: //images.unsplash.com/photo-1554224155-8d04cb21cd6c") center/cover;
     color: #fff;
     padding: 100px 0;
     text-align: center;
@@ -137,6 +137,9 @@ footer {
 /* Logo image */
 .logo img {
     height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Company name next to logo */
