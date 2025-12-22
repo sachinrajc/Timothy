@@ -131,13 +131,13 @@ footer {
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 /* Logo image */
 .logo img {
-    height: 50px;
-    width: 50px;
+    height: 48px;
+    width: 48px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -156,6 +156,5 @@ footer {
     color: #ffffff;
     font-size: 22px;
     font-weight: 700;
-    letter-spacing: 1px;
     white-space: nowrap;
 }
