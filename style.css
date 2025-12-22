@@ -127,22 +127,31 @@ footer {
     padding: 15px 0;
 }
 /* Logo + company name wrapper */
-/* Logo + company name */
+/* Logo + company name wrapper */
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 /* Logo image */
 .logo img {
-    height: 48px;
-    width: 48px;
-    border-radius: 20%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
     object-fit: cover;
 }
 
-/* Company name */
+/* Company name next to logo */
+.logo .company-name {
+    color: #ffffff;   /* FORCE white */
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+/* Company name next to logo */
 .company-name {
     color: #ffffff;
     font-size: 22px;
@@ -150,4 +159,3 @@ footer {
     letter-spacing: 1px;
     white-space: nowrap;
 }
-
