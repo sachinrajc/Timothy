@@ -1,91 +1,370 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timothy Grant FinancialServices</title>
-    <meta name="description" content="Professional bookkeeping, payroll, taxation, and financial consulting services.">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Timothy Grant Financial – Mockup</title>
+  <style>
+    :root{
+      --navy:#15324d;
+      --navy-2:#0f2942;
+      --gold:#f2c230;
+      --gold-2:#e0b11f;
+      --ink:#0b1b2b;
+      --muted:#6b7785;
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --shadow: 0 10px 28px rgba(0,0,0,.14);
+      --shadow-soft: 0 10px 22px rgba(0,0,0,.10);
+      --radius: 12px;
+      --max: 1180px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--ink);
+      background: #e9eef6;
+    }
+
+    /* ===== Top hero/background band ===== */
+    .hero-band{
+      background:
+        radial-gradient(1200px 240px at 50% 40%, rgba(255,255,255,.55), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, #0c2b44 0%, #1b476f 40%, #0f2f4c 100%);
+      padding: 28px 0 26px;
+      position: relative;
+    }
+
+    .container{
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .topline{
+      text-align:center;
+      font-weight: 750;
+      letter-spacing: .2px;
+      color: #0b2034;
+      font-size: clamp(22px, 3vw, 42px);
+      text-transform: none;
+      background: rgba(255,255,255,.25);
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 999px;
+      box-shadow: 0 12px 22px rgba(0,0,0,.18);
+      backdrop-filter: blur(2px);
+    }
+
+    .topline-wrap{
+      display:flex;
+      justify-content:center;
+      margin-bottom: 14px;
+    }
+
+    /* ===== Nav row ===== */
+    .navrow{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap: 26px;
+      padding: 6px 4px 0;
+      color: rgba(255,255,255,.9);
+      font-weight: 500;
+    }
+    .navrow a{
+      color: rgba(255,255,255,.86);
+      text-decoration:none;
+      font-size: 15px;
+    }
+    .navrow a:hover{ color:#fff; }
+
+    .cta{
+      border: 0;
+      padding: 10px 16px;
+      border-radius: 6px;
+      background: linear-gradient(180deg, var(--gold) 0%, var(--gold-2) 100%);
+      color: #1b1b1b;
+      font-weight: 700;
+      cursor:pointer;
+      box-shadow: 0 8px 16px rgba(0,0,0,.18);
+      white-space: nowrap;
+    }
+
+    /* ===== Logo plate ===== */
+    .logo-plate-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 26px 0 4px;
+    }
+
+    .logo-plate{
+      width: min(860px, 100%);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65)),
+        radial-gradient(700px 140px at 50% 40%, rgba(255,255,255,.9), rgba(255,255,255,.35));
+      border-radius: 999px;
+      border: 3px solid rgba(227, 196, 122, .85);
+      box-shadow: 0 18px 32px rgba(0,0,0,.25);
+      display:flex;
+      align-items:center;
+      gap: 18px;
+      padding: 18px 26px;
+      position: relative;
+    }
+
+    .logo-mark{
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 35%, #ffffff, #d9e1ea 58%, #c6d1dd 100%);
+      border: 2px solid rgba(0,0,0,.15);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      flex: 0 0 auto;
+    }
+    /* Placeholder mark */
+    .logo-mark span{
+      display:inline-block;
+      width: 54px;
+      height: 54px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #0d3b66, #0b2f52);
+      color:#fff;
+      font-weight:800;
+      display:grid;
+      place-items:center;
+      letter-spacing:.6px;
+      font-size: 16px;
+      border: 2px solid rgba(255,255,255,.45);
+    }
+
+    .logo-text{
+      flex: 1 1 auto;
+      text-align:center;
+      line-height: 1.05;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: #0f2a43;
+    }
+    .logo-text .big{
+      font-size: clamp(28px, 3.6vw, 52px);
+      font-weight: 800;
+      letter-spacing: 1.3px;
+    }
+    .logo-text .small{
+      margin-top: 4px;
+      font-size: clamp(14px, 1.4vw, 20px);
+      letter-spacing: 6px;
+      font-weight: 700;
+    }
+
+    .logo-plate:before,
+    .logo-plate:after{
+      content:"";
+      position:absolute;
+      height: 2px;
+      background: rgba(184, 148, 62, .55);
+      width: 26%;
+      top: 52%;
+    }
+    .logo-plate:before{ left: 18%; }
+    .logo-plate:after{ right: 18%; }
+
+    /* ===== Content area ===== */
+    .content{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.92)),
+        radial-gradient(900px 240px at 50% 0%, rgba(210,220,235,.55), rgba(255,255,255,0));
+      padding: 26px 0 70px;
+      border-top: 1px solid rgba(0,0,0,.10);
+    }
+
+    .headline{
+      text-align:center;
+      font-size: clamp(20px, 2.6vw, 34px);
+      font-weight: 800;
+      color: #0f2a43;
+      margin: 8px 0 24px;
+    }
+
+    .tabs{
+      display:flex;
+      gap: 16px;
+      align-items:center;
+      padding: 0 0 22px;
+    }
+    .tab{
+      background: #e8edf4;
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 6px;
+      padding: 14px 22px;
+      min-width: 170px;
+      text-align:center;
+      font-weight: 700;
+      color: #18334c;
+      box-shadow: 0 8px 14px rgba(0,0,0,.07);
+    }
+    .tab.active{
+      background: #efe4cf;
+      border-color: rgba(184,148,62,.25);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items:start;
+      position: relative;
+    }
+
+    .section h2{
+      margin: 0 0 10px;
+      font-size: 26px;
+      color: #0f2a43;
+    }
+    .section p{
+      margin: 0;
+      color: #445363;
+      max-width: 66ch;
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .spacer{ height: 38px; }
+
+    /* ===== Intake card ===== */
+    .intake-card{
+      background: linear-gradient(180deg, #f8f3e7, #f2ead6);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      border: 1px solid rgba(0,0,0,.10);
+      max-width: 420px;
+      justify-self:end;
+    }
+    .intake-card .top{
+      background: linear-gradient(180deg, #1a3f66, #0f2f4c);
+      color: #fff;
+      padding: 14px 16px;
+      font-weight: 800;
+      text-align:center;
+      letter-spacing:.2px;
+    }
+    .intake-card .body{
+      padding: 16px 18px 18px;
+      text-align:center;
+    }
+    .intake-card .btn{
+      display:inline-block;
+      margin: 8px auto 10px;
+      padding: 10px 22px;
+      border-radius: 6px;
+      background: linear-gradient(180deg, var(--gold), var(--gold-2));
+      color: #1b1b1b;
+      font-weight: 900;
+      text-decoration:none;
+      box-shadow: var(--shadow-soft);
+    }
+    .intake-card .note{
+      font-size: 12.5px;
+      color: #3e4c5a;
+      line-height: 1.45;
+    }
+
+    /* ===== Responsiveness ===== */
+    @media (max-width: 920px){
+      .navrow{ justify-content:center; flex-wrap:wrap; }
+      .logo-plate:before, .logo-plate:after{ display:none; }
+      .grid{ grid-template-columns: 1fr; }
+      .intake-card{ justify-self: start; width: min(520px, 100%); }
+      .tabs{ flex-wrap:wrap; }
+      .tab{ min-width: 0; flex: 1 1 160px; }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header>
-    <div class="container nav">
-        <div class="logo">
-            <img src="images/logo3.jpeg" alt="Timothy Grant Financial Logo">
-             <span class="company-name">TGF</span>
+  <!-- HERO / HEADER -->
+  <header class="hero-band">
+    <div class="container">
+      <div class="topline-wrap">
+        <div class="topline">Reliable Accounting &amp; Financial Solutions</div>
+      </div>
+
+      <nav class="navrow" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <button class="cta" type="button">Book a Free Consultation</button>
+      </nav>
+
+      <div class="logo-plate-wrap">
+        <div class="logo-plate" role="img" aria-label="Timothy Grant Financial logo plate">
+          <div class="logo-mark">
+            <!-- Replace this span with your real logo image if desired:
+                 <img src="your-logo.png" alt="TGF logo" style="width:100%;height:100%;object-fit:cover;"> -->
+            <span>TGF</span>
+          </div>
+
+          <div class="logo-text">
+            <div class="big">TIMOTHY GRANT</div>
+            <div class="small">FINANCIAL</div>
+          </div>
         </div>
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+      </div>
     </div>
-</header>
+  </header>
 
-<!-- HERO -->
-<section class="hero">
+  <!-- MAIN CONTENT -->
+  <main class="content">
     <div class="container">
-        <h1>Reliable Accounting & Financial Solutions</h1>
-        <p>Helping individuals and businesses stay compliant, organized, and financially confident.</p>
-        <a href="#contact" class="btn">Book a Free Consultation</a>
-    </div>
-</section>
+      <div class="headline">We’re Ready for the 2024 Tax Season</div>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-    <div class="container">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            <div class="service-box">
-                <h3>Bookkeeping</h3>
-                <p>Accurate and timely financial records.</p>
-            </div>
-            <div class="service-box">
-                <h3>Payroll</h3>
-                <p>Reliable payroll processing and compliance.</p>
-            </div>
-            <div class="service-box">
-                <h3>Taxation</h3>
-                <p>Personal and corporate tax services.</p>
-            </div>
-            <div class="service-box">
-                <h3>Consulting</h3>
-                <p>Strategic financial advice for growth.</p>
-            </div>
+      <div class="tabs" id="services">
+        <div class="tab">Bookkeeping</div>
+        <div class="tab">Payroll</div>
+        <div class="tab active">Taxation</div>
+      </div>
+
+      <section class="grid" id="about">
+        <div>
+          <div class="section">
+            <h2>About Timothy t 2024 Tax Season.</h2>
+            <p>
+              Please complete our secure online form to support the preparation of your 2024 tax return.
+              This area is a placeholder for your final marketing copy and can be replaced with your
+              real content.
+            </p>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="section">
+            <h2>About Timothy Grant Financial</h2>
+            <p>
+              Please complete our secure online form to support the preparation of your 2024 tax return.
+              This area is a placeholder for your firm overview, positioning, service scope, and
+              credibility markers.
+            </p>
+          </div>
         </div>
+
+        <aside class="intake-card" aria-label="2024 Tax Intake Form card">
+          <div class="top">Start your 2024 Tax Intake Form</div>
+          <div class="body">
+            <a class="btn" href="#intake">Get Started</a>
+            <div class="note">
+              Information submitted through this form will be used solely for the purpose of preparing your tax return
+              and meeting Canada Revenue Agency (CRA) filing requirements.
+            </div>
+          </div>
+        </aside>
+      </section>
     </div>
-</section>
+  </main>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-    <div class="container">
-        <h2>About Timothy Grant Financial </h2>
-        <p>
-            Timothy Grant Financial Services is committed to providing reliable, transparent, and personalized accounting solutions. 
-            Our experienced professionals work closely with clients to ensure financial clarity and long-term success.
-        </p>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-    <div class="container">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <textarea rows="5" placeholder="How can we help you?" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-</section>
-
-<footer>
-    <p>&copy; 2025 Timothy Grant Financial Services</p>
-</footer>
-
-<script src="app.js"></script>
 </body>
 </html>
